@@ -21,7 +21,7 @@ class Invoice(BaseModel):
             id=json.get(Invoice._id),
             doc_number=json.get(Invoice.doc_number),
             sync_token=json.get(Invoice.sync_token),
-            date=json.get(Invoice.date)
+            date=json.get(Invoice.date),
         )
 
     @property

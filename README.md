@@ -49,3 +49,9 @@ client = QuickBooksApiClient(access_token=ACCESS_TOKEN)
 invoice_data = client.query(query=query)
 invoice = Invoice.from_dict(invoice_data)
 ```
+
+
+## Areas of improvement
+> * Add multiple field types with custom validation predicates
+> * Add serialization classes (Maybe even use Django Rest Framework's ?)
+> * Add support for nested fields
