@@ -1,7 +1,7 @@
 from enum import Enum
 
 
-class QuickBooksResource(Enum):
+class Resource(Enum):
     """
     An enum that holds the difference resource that we might query from Quickbooks
     """
