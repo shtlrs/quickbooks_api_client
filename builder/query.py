@@ -25,6 +25,9 @@ class Query:
         self.max_results = -1
         self.start_position = -1
 
+    def __str__(self):
+        return self.stringify()
+
     def SELECT(self, *fields):
         self.fields_to_select = ",".join(fields)
         return self
