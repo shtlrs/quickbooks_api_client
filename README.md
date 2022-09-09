@@ -38,12 +38,12 @@ invoice_data = client.get(resource_id=invoice_id, resource=Resource.INVOICE)
 
 from client import QuickBooksApiClient
 from config import ACCESS_TOKEN
-from enums import Resource
+from models import Invoice
 from builder import Query
 from builder.conditions import Equals
 
 invoice_name = "Business dinner"
-query = Query().SELECT("*").FROM("Invoice").WHERE(Equals("DocNumber", invoice_name))
+query = Query().SELECT(Invoice.ALL).FROM(Invoice.table_name).WHERE(Equals(Invoice.doc_number, invoice_name))
 client = QuickBooksApiClient(access_token=ACCESS_TOKEN)
 
 invoice_data = client.query(query=query)
