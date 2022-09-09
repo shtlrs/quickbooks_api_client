@@ -8,6 +8,7 @@ class Query:
     """
     The query object that will be used upon requesting resources from Quickbooks' API.
     """
+
     fields_to_select: str
     target_table: str
     conditions: List[AbstractCondition]
@@ -19,8 +20,8 @@ class Query:
 
     def __init__(self):
         self.conditions = []
-        self.ordering_type = ''
-        self.order_by = ''
+        self.ordering_type = ""
+        self.order_by = ""
         self.max_results = -1
         self.start_position = -1
 
@@ -61,9 +62,11 @@ class Query:
         return self
 
     def stringify(self):
-        self.query = f"SELECT {self.fields_to_select} " \
-                f"FROM {self.target_table} " \
-                f"{self.compose_conditions()} "
+        self.query = (
+            f"SELECT {self.fields_to_select} "
+            f"FROM {self.target_table} "
+            f"{self.compose_conditions()} "
+        )
 
         if self.order_by:
             self.query += f"ORDERBY {self.order_by} "
@@ -81,7 +84,7 @@ class Query:
         return self.query
 
     def compose_conditions(self):
-        query = f""
+        query = ""
 
         if not self.conditions:
             return ""

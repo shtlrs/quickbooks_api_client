@@ -4,7 +4,6 @@ from builder.conditions.abstract import AbstractCondition
 
 
 class Equals(AbstractCondition):
-
     def __init__(self, attribute: str, target: Union[str, int]):
         super(Equals, self).__init__(attribute)
         self.target = target

@@ -22,6 +22,8 @@ class AbstractBaseClient(ABC):
     base_url: str
     base_headers: dict
     __minor_version__: int
+    __api_version__: int
+    realm_id: int
 
     @abstractmethod
     def get(self, resource_id: int, resource_type: Resource):
@@ -62,5 +64,6 @@ class AbstractBaseClient(ABC):
             query : Query
                 The query object that will be used for the resource lookup
             bring_all : int
-                A boolean that indicates whether to fetch all pages or just the default first page
+                A boolean that indicates whether to fetch all pages
+                or just the default first page
         """

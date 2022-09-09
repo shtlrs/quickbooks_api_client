@@ -6,6 +6,7 @@ class AbstractCondition(ABC):
     """
     A base abstract class for all conditions
     """
+
     attribute: str
     target: Union[Iterable, str, int]
 
