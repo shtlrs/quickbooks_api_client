@@ -15,7 +15,7 @@ data from quickbooks and provides a basic API wrapper over their web APIs.
 
 #  Quickstart
 
-First think you'll need to do is to set the `ACCESS_TOKEN` environment variable.
+First thing you'll need to do is to set the `ACCESS_TOKEN` environment variable.
 
 ## Fetch a particular invoice
 
