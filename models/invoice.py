@@ -8,6 +8,7 @@ class Invoice(BaseModel):
     date = BaseField("TxnDate")
     sync_token = BaseField("SyncToken")
     doc_number = BaseField("DocNumber")
+    table_name = "Invoice"
 
     def __init__(self, id, date, sync_token, doc_number):
         self._id = id
