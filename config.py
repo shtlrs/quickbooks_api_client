@@ -6,4 +6,5 @@ load_dotenv()
 API_VERSION = 3
 MINOR_VERSION = 62
 REALM_ID = getenv("REALM_ID", None)
+ACCESS_TOKEN = getenv("ACCESS_TOKEN", None)
 BASE_URL = f"https://quickbooks.api.intuit.com/{API_VERSION}/company/{REALM_ID}/"
