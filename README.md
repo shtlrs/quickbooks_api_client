@@ -11,7 +11,7 @@ data from quickbooks and provides a basic API wrapper over their web APIs.
 >   * Fetch a resource by id
 >   * Search for a resource based on a particular query
 >   * Delete a resource
-> * This project currently has no data models, and the data fetched is a native python dictionary
+> * This project currently has a very simple implementation of the Invoice model only
 
 #  Quickstart
 
