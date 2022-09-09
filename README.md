@@ -47,5 +47,5 @@ query = Query().SELECT(Invoice.ALL).FROM(Invoice.table_name).WHERE(Equals(Invoic
 client = QuickBooksApiClient(access_token=ACCESS_TOKEN)
 
 invoice_data = client.query(query=query)
-
+invoice = Invoice.from_dict(invoice_data)
 ```

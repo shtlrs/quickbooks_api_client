@@ -16,6 +16,14 @@ class Invoice(BaseModel):
         self.sync_token = sync_token
         self.doc_number = doc_number
 
+    def from_dict(self, json) -> BaseModel:
+        return Invoice(
+            id=json.get(Invoice._id),
+            doc_number=json.get(Invoice.doc_number),
+            sync_token=json.get(Invoice.sync_token),
+            date=json.get(Invoice.date)
+        )
+
     @property
     def id(self):
         return self._id
