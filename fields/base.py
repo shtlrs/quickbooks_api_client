@@ -7,7 +7,10 @@ class BaseField(ABC):
     val: Optional[Any] = None
     query_param_name: str
 
-    def __init__(self, query_param_name: str,):
+    def __init__(
+        self,
+        query_param_name: str,
+    ):
         self.query_param_name = query_param_name
 
     def __set_name__(self, owner, name):
