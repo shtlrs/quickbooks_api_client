@@ -1,3 +1,4 @@
+from typing import Union
 from urllib.parse import urljoin
 
 import requests
@@ -29,7 +30,7 @@ class QuickBooksApiClient(abstract.AbstractBaseClient):
             "Host": "quickbooks.api.intuit.com",
         }
 
-    def get(self, resource_id: str, resource: Resource) -> dict:
+    def get(self, resource_id: Union[str, int], resource: Resource) -> dict:
         """
         Returns the data of a particular resource
         """
@@ -43,8 +44,6 @@ class QuickBooksApiClient(abstract.AbstractBaseClient):
 
         if response.status_code != 200:
             raise RequestError(
-                resource_id=resource_id,
-                resource=resource,
                 http_verb=HttpVerb.GET,
                 text=response.text,
                 extra_data={"path": path},
